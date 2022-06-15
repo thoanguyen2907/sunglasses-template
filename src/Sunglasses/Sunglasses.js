@@ -2,13 +2,7 @@ import React, { useState } from 'react'
 import dataGlasses from '../Data/dataGlasses.json';
 
 export default function Sunglasses() {
-    const [glassesCurrent, setCurrentGlasses] = useState({
-        "id": 2,
-        "price": 50,
-        "name": "GUCCI G8759H",
-        "url": "./glassesImage/v2.png",
-        "desc": "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. "
-    })
+  
     const styleGlasses = {
         width: '150px',
         top: '75px',
@@ -26,15 +20,7 @@ export default function Sunglasses() {
         textAlign: 'left',
         height: '105px'
     }
-    const changeGlasses = (newGlasses) => {
-        setCurrentGlasses(newGlasses)
-    }
-    const renderGlasses = () => {
-        return dataGlasses.map((item, index) => {
-            return   <img onClick = {()=> {changeGlasses(item)}} key = {index} className="ml-2 p-2 border border-width-1" style={{ width: '110px', cursor: 'pointer' }}  src={item.url} />
-        })
-    }
-
+   
 
     return (
         <div style={{ backgroundImage: 'url(./glassesImage/background.jpg)', backgroundSize: '2000px', minHeight: '2000px' }}>
@@ -45,12 +31,12 @@ export default function Sunglasses() {
                         <div className="col-6">
                             <div className="position-relative">
                                 <img className="position-absolute" style={{ width: '250px' }} src="./glassesImage/model.jpg" alt='model.jpg' />
-                                <img style={styleGlasses} className="position-absolute glassesStyle" src={glassesCurrent.url} />
+                                <img style={styleGlasses} className="position-absolute glassesStyle" src="./glassesImage/v1.png" />
 
                                 <div style={infoGlasses} className="position-relative ">
-                                    <span style={{ color: '#AB82FF', fontSize: '17px' }} className="font-weight-bold"> {glassesCurrent.name}</span> <br />
+                                    <span style={{ color: '#AB82FF', fontSize: '17px' }} className="font-weight-bold"> PRADA</span> <br />
                                     <span style={{ fontSize: '14px', paddingRight: '5px', fontWeight: '400' }}>
-                                        {glassesCurrent.desc}
+                                    Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. 
                                     </span>
                                 </div>
                             </div>
@@ -63,7 +49,7 @@ export default function Sunglasses() {
                 </div>
                 {/* Div chứa các kính được chọn */}
                 <div className="bg-light container text-center mt-5 d-flex justify-content-center p-5">
-                {renderGlasses()}
+          
             
                 </div>
             </div>
